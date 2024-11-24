@@ -804,5 +804,14 @@ p {
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link::before {
   content: none; /* Removes the dots completely */
 }
+
+.nav-link i {
+  margin-right: 8px; /* Adds space between the icon and text */
+  color: #fec016; /* Optional: Icon color matches the gold theme */
+}
+
+.nav-link:hover i {
+  color: #ffffff; /* Icons change color on hover */
+}
 /* end footer section*/
 /*# sourceMappingURL=style.css.map */
