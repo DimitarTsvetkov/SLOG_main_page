@@ -199,7 +199,7 @@ a:focus {
 }
 
 .custom_nav-container {
-  z-index: 99999;
+  z-index: 99996;
   padding: 15px 0;
 }
 
@@ -254,6 +254,15 @@ h1 {
 p {
   color: #d2f4f4; /* Darker text color for readability */
   background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent gray background */
+  padding: 8px 16px; /* Padding inside the curved background */
+  border-radius: 10px; /* Rounded corners */
+  display: inline-block; /* Ensure the background hugs the text */
+  max-width: 90%; /* Optional: Limit paragraph width for cleaner design */
+}
+
+.modal_notice {
+  color: white; /* Darker text color for readability */
+  background-color: none!; /* Semi-transparent gray background */
   padding: 8px 16px; /* Padding inside the curved background */
   border-radius: 10px; /* Rounded corners */
   display: inline-block; /* Ensure the background hugs the text */
@@ -749,7 +758,6 @@ p {
   color: #fbfcfd;
   margin: 0 auto;
   text-align: center;
-  border-top: 1px solid #ffffff;
 }
 
 .footer_section a {
@@ -813,5 +821,57 @@ p {
 .nav-link:hover i {
   color: #ffffff; /* Icons change color on hover */
 }
-/* end footer section*/
-/*# sourceMappingURL=style.css.map */
+
+
+.custom-modal {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+  color: #d2f4f4; /* Light text color matching paragraphs */
+  border-radius: 20px; /* Rounded corners for the modal */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Drop shadow for depth */
+}
+
+.modal-header {
+  border-bottom: none;
+  padding: 30px 20px 10px;
+}
+
+.modal-footer {
+  padding: 20px 30px;
+}
+
+.text-gold {
+  color: #fec016; /* Gold text for titles */
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.text-paragraph {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  background-color: transparent !important; /* Semi-transparent background */
+  padding: 10px 20px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.modal-btn {
+  width: 50%; /* Wider OK button */
+  padding: 12px 0;
+  font-size: 1.1rem;
+  margin-bottom: 20px; /* Extra spacing at the bottom */
+}
+
+.btn-primary:disabled,
+.btn-primary[disabled] {
+    background-color: #fec016;  /* Gold color */
+    border-color: #e0ac00;  /* Slightly darker gold border */
+    color: #fff;  /* White text */
+    opacity: 1;  /* Ensure full opacity */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);  /* Maintain shadow */
+}
+
+
+
+
+

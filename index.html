@@ -26,6 +26,16 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+
+  <script src="js/index.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "w-eU698AvykXXaekF",
+      });
+   })();
+</script>
   <style>
     body {
       background: url('background_image.webp') no-repeat center center fixed;
@@ -112,7 +122,7 @@
           Embodying the strategic prowess of a Shogun and the serene patience of a Sloth, SLOG offers stability and wisdom for your crypto journey.
         </p>
         <div class="social-links">
-          <a  style="color: #fec016;"  href="https://x.com/slog_coinSol" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a  style="color: #fec016;"  href="https://x.com/slog_coinSol " target="_blank"><i class="fab fa-twitter"></i></a>
           <a style="color: #fec016;" href="https://t.me/slog_coin" target="_blank"><i class="fab fa-telegram"></i></a>
         </div>
       </div>
@@ -153,6 +163,7 @@
   </section>
   <!-- end chart section -->
 
+
   <!-- contact section -->
   <section id="contact" class="contact_section layout_padding">
     <div class="container">
@@ -161,25 +172,57 @@
       </div>
       <form>
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Full Name" required />
+          <input type="text" class="form-control" placeholder="Name" id="name" required />
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" placeholder="Email" required />
+          <input type="email" class="form-control" placeholder="Email" id="email" required />
         </div>
         <div class="form-group">
-          <textarea class="form-control" rows="3" placeholder="Message" required></textarea>
+          <textarea class="form-control " rows="3" placeholder="Message" id="message" required></textarea>
         </div>
         <div class="form-group text-center">
-          <button type="submit" class="btn btn-primary">Send</button>
+          <!-- <button type="submit" class="btn btn-primary" onclick="sendMail(event)">Send</button> -->
+          <button type="submit" id="submitButton" class="btn btn-primary" onclick="sendMail(event)">Submit</button>
+
+
         </div>
       </form>
     </div>
   </section>
   <!-- end contact section -->
 
+  <!-- Loading Spinner -->
+<!-- <div class="loading-overlay" id="loadingOverlay">
+  <div class="spinner-border text-light" role="status">
+    <span class="sr-only">Sending...</span>
+  </div>
+</div> -->
+
+  <!-- start modal section -->
+
+  <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content custom-modal">
+        <div class="modal-header border-0 justify-content-center">
+          <h5 class="modal-title text-gold" id="successModalLabel">Message Sent Successfully</h5>
+        </div>
+        <div class="modal-body text-center">
+          <img src="images/main.webp" alt="SLOG Logo" class="logo-circle mb-4">
+          <p class="text-paragraph">Thank you for your message! We'll get back to you shortly.</p>
+        </div>
+        <div class="modal-footer border-0 justify-content-center">
+          <button type="button" class="btn btn-primary modal-btn" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- end modal section -->
+
+
   <footer class="footer_section">
     <div class="container text-center">
-      <p>&copy; 2024 SLOG Coin. All Rights Reserved.</p>
+      <p class="text-paragraph">&copy; 2024 SLOG Coin. All Rights Reserved.</p>
     </div>
   </footer>
 
