@@ -180,18 +180,19 @@
       </div>
       <form>
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Name" id="name" required />
+          <input type="text" class="form-control" placeholder="Name" id="name" required oninput="validateForm()" />
+          <small id="nameError" class="error-message "></small>
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" placeholder="Email" id="email" required />
+          <input type="email" class="form-control" placeholder="Email" id="email" required oninput="validateForm()" />
+          <small id="emailError" class="error-message"></small>
         </div>
         <div class="form-group">
-          <textarea class="form-control " rows="3" placeholder="Message" id="message" required></textarea>
+          <textarea class="form-control" rows="3" placeholder="Message" id="message" required oninput="validateForm()"></textarea>
+          <small id="messageError" class="error-message"></small>
         </div>
         <div class="form-group text-center">
-          <button type="submit" id="submitButton" class="btn btn-primary" onclick="sendMail(event)">Submit</button>
-
-
+          <button type="submit" id="submitButton" class="btn btn-primary" onclick="sendMail(event)" disabled>Submit</button>
         </div>
       </form>
     </div>

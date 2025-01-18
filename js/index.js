@@ -1,11 +1,61 @@
 let loadingInterval;
 
+function validateForm() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const submitButton = document.getElementById("submitButton");
+
+    const nameError = document.getElementById("nameError");
+    const emailError = document.getElementById("emailError");
+    const messageError = document.getElementById("messageError");
+
+    let isValid = true;
+
+    // Clear previous error messages
+    nameError.style.display = "none";
+    emailError.style.display = "none";
+    messageError.style.display = "none";
+
+    // Validate name field
+    if (!name) {
+        nameError.textContent = "Name is required.";
+        nameError.style.display = "block";
+        isValid = false;
+    }
+
+    // Validate email field
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // RFC 5322 standard
+    if (!email) {
+        emailError.textContent = "Email is required.";
+        emailError.style.display = "block";
+        isValid = false;
+    } else if (!emailRegex.test(email)) {
+        emailError.textContent = "Invalid email format.";
+        emailError.style.display = "block";
+        isValid = false;
+    }
+
+    // Validate message field
+    if (!message) {
+        messageError.textContent = "Message is required.";
+        messageError.style.display = "block";
+        isValid = false;
+    }
+
+    // Enable or disable the submit button
+    submitButton.disabled = !isValid;
+}
+
+
+
+
 function sendMail(event) {
     event.preventDefault();
     console.log("Send button clicked");
+    validateForm();
 
     const submitButton = document.getElementById("submitButton");
-    const spinner = document.getElementById("loadingOverlay");
 
     // Disable button and maintain style
     submitButton.disabled = true;
@@ -58,4 +108,51 @@ function resetSubmitButton(button, originalText) {
     clearInterval(loadingInterval);
     button.innerHTML = originalText;
     button.disabled = false;
+}
+
+function validateForm() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const submitButton = document.getElementById("submitButton");
+
+    const nameError = document.getElementById("nameError");
+    const emailError = document.getElementById("emailError");
+    const messageError = document.getElementById("messageError");
+
+    let isValid = true;
+
+    // Clear previous error messages
+    nameError.style.display = "none";
+    emailError.style.display = "none";
+    messageError.style.display = "none";
+
+    // Validate name field
+    if (!name) {
+        nameError.textContent = "Name is required.";
+        nameError.style.display = "block";
+        isValid = false;
+    }
+
+    // Validate email field
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // RFC 5322 standard
+    if (!email) {
+        emailError.textContent = "Email is required.";
+        emailError.style.display = "block";
+        isValid = false;
+    } else if (!emailRegex.test(email)) {
+        emailError.textContent = "Invalid email format.";
+        emailError.style.display = "block";
+        isValid = false;
+    }
+
+    // Validate message field
+    if (!message) {
+        messageError.textContent = "Message is required.";
+        messageError.style.display = "block";
+        isValid = false;
+    }
+
+    // Enable or disable the submit button
+    submitButton.disabled = !isValid;
 }
