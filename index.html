@@ -37,11 +37,7 @@
    })();
 </script>
   <style>
-    body {
-      background: url('background_image.webp') no-repeat center center fixed;
-      background-size: cover;
-    }
-    .hero_area {
+    .main_area {
       text-align: center;
       color: #fff;
     }
@@ -49,10 +45,7 @@
       font-size: 1.5rem;
       font-weight: bold;
     }
-    .slider_section h1,
-    .slider_section h2 {
-      color: #fff;
-    }
+
     .slog-logo {
       width: 200px;
       margin: 0 auto;
@@ -66,10 +59,10 @@
 </head>
 
 <body>
-  <div class="hero_area">
+  <div class="main_area">
     <!-- header section -->
+
     <header class="header_section">
-      <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
           <a class="navbar-brand" href="index.html">
             <img src="images/main.webp" alt="SLOG Logo" class="logo-circle">
@@ -107,12 +100,12 @@
             </ul>
           </div>
         </nav>
-      </div>
     </header>
     <!-- end header section -->
 
     <!-- slider section -->
-    <section class="slider_section">
+    <div  class="container" id="topic-container">  
+    <section >
       <div class="container">
         <div class="slog-logo">
           <!-- <img src="images/main.webp" alt="SLOG Logo" /> -->
@@ -123,11 +116,11 @@
         </p>
       </div>
     </section>
+ 
     <!-- end slider section -->
-  </div>
 
   <!-- about section -->
-  <section id="about" class="do_section layout_padding">
+  <section id="about" class=" layout_padding">
     <div class="container">
       <div class="paragraph_container">
         <h2 style="color: #fec016"><strong>About SLOG</strong></h2>
@@ -146,19 +139,28 @@
       </div>
     </div>
   </section>
+
+
+
+
+
   <!-- end about section -->
 
   <!-- chart section -->
   <section id="chart" class="work_section layout_padding">
     <div class="container">
       <div class="heading_container">
-        <h2>SLOG Performance</h2>
+        <h2>SLOG Performance:</h2>
         <!-- Track the latest market performance of SLOG Coin. -->
         <p class="custom_section"> Coming soon!... </p>
      
       </div>
     </div>
   </section>
+
+
+
+
 
   <section id="ca" class="work_section layout_padding">
     <div class="container">
@@ -168,13 +170,15 @@
   
       </div>
     </div>
-  </section>
+    
+
+
   <!-- end chart section -->
 
 
   <!-- contact section -->
   <section id="contact" class="contact_section layout_padding">
-    <div class="container">
+    <div class="container" id="topic-container" >
       <div class="heading_container">
         <h2>Contact Us</h2>
       </div>
@@ -197,6 +201,10 @@
       </form>
     </div>
   </section>
+</div>
+</div>
+</div>
+
   <!-- end contact section -->
 
 
