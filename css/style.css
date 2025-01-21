@@ -12,8 +12,8 @@ body::before {
   height: 100%;
   background: url('../images/background_image.webp') no-repeat center center fixed;
   background-size: cover;
-  opacity: 0.7; /* Adjust opacity for a less aggressive background */
-  z-index: -1; /* Ensure it stays behind all content */
+  opacity: 0.7; 
+  z-index: -1; 
 }
 
 .layout_padding {
@@ -55,22 +55,9 @@ body::before {
   display: inline-block;
 }
 
-.custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
-  margin: 10px 15px; /* Adjust spacing */
-  color: #fec016; /* Gold color */
-  text-align: center;
-  position: relative;
-  font-weight: bold;
-  background-color: rgba(0, 0, 0, 0.6); /* Transparent gray background */
-  padding: 8px 12px; /* Padding for readability */
-  border-radius: 12px; /* Rounded corners */
-  transition: background-color 0.3s ease, color 0.3s ease;
-  
-}
-
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link:hover {
-  background-color: rgba(254, 192, 22, 0.8); /* Golden hover background */
-  color: #fff; /* White text on hover */
+  background-color: rgba(254, 192, 22, 0.8); 
+  color: #fff; 
 }
 
 
@@ -150,11 +137,11 @@ a:focus {
 
 h1 {
   font-weight: bold;
-  color: #fec016; /* Gold color */
-  /* background-color: rgba(0, 0, 0, 0.6);  */
-  padding: 10px 20px; /* Padding inside the curved background */
-  border-radius: 15px; /* Rounded corners */
-  display: inline-block; /* Ensure the background hugs the text */
+  color: #fec016; 
+ 
+  padding: 10px 20px; 
+  border-radius: 15px; 
+  display: inline-block; 
 }
 
 .slider_section .detail-box h1 {
@@ -171,19 +158,19 @@ h1 {
 }
 
 .paragraph_container {
-  color: #d2f4f4; /* Darker text color for readability */
-  padding: 8px 16px; /* Padding inside the curved background */
-  border-radius: 10px; /* Rounded corners */
-  display: inline-block; /* Ensure the background hugs the text */
-  max-width: 90%; /* Optional: Limit paragraph width for cleaner design */
+  color: #d2f4f4; 
+  padding: 8px 16px; 
+  border-radius: 10px; 
+  display: inline-block; 
+  max-width: 90%; 
 
 }
 .custom_section {
-  color: #d2f4f4; /* Darker text color for readability */
-  padding: 8px 16px; /* Padding inside the curved background */
-  border-radius: 10px; /* Rounded corners */
-  display: inline-block; /* Ensure the background hugs the text */
-  max-width: 90%; /* Optional: Limit paragraph width for cleaner design */
+  color: #d2f4f4; 
+  padding: 8px 16px; 
+  border-radius: 10px; 
+  display: inline-block; 
+  max-width: 90%; 
 }
 
 .slider_section .detail-box a {
@@ -276,6 +263,12 @@ h1 {
   max-width: 60%;
 }
 
+@media (max-width: 991px) {
+  #topic-container {
+    max-width: 100%; /* Set to 100% width for smaller screens */
+  }
+}
+
 .contact_section .heading_container {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -365,11 +358,11 @@ h1 {
 
 .logo-circle {
   width: 100px; /* Adjust the size as needed */
-  height: 100px; /* Same as width to make it circular */
-  border-radius: 50%; /* Makes the image circular */
-  object-fit: cover; /* Ensures the image fits within the circle */
-  border: 2px solid #fec016; /* Optional: Adds a border with a gold color */
-  transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth transition for hover effect */
+  height: 100px; 
+  border-radius: 50%; 
+  object-fit: cover;
+  border: 2px solid #fec016; 
+  transition: transform 0.3s ease, border-color 0.3s ease; 
 }
 
 .logo-circle:hover {
@@ -476,6 +469,107 @@ h1 {
   margin-top: 5px;
   display: none;
   margin-top: 5px;
+}
+
+
+
+.navbar {
+  background-color: #232323;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand span {
+  margin-left: 10px;
+  color: #fec016;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  color: #fec016;
+  font-weight: bold;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: rgba(254, 192, 22, 0.8);
+  color: #ffffff;
+  border-radius: 8px;
+}
+
+/* Hamburger Button */
+.navbar-toggler {
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: transparent;
+}
+
+.navbar-toggler-icon {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 3px;
+  background-color: #fec016;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  background-color: #fec016;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+  top: -8px;
+}
+
+.navbar-toggler-icon::after {
+  top: 8px;
+}
+
+.navbar-toggler.collapsed .navbar-toggler-icon {
+  background-color: transparent;
+}
+
+.navbar-toggler.collapsed .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.navbar-toggler.collapsed .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* Mobile Styling */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+  }
 }
 
 
