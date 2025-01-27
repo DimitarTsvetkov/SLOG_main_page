@@ -156,3 +156,17 @@ function validateForm() {
     // Enable or disable the submit button
     submitButton.disabled = !isValid;
 }
+
+// Highlight active menu item
+// const currentPage = window.location.pathname.split('/').pop();
+// const navLinks = document.querySelectorAll('.nav-link');
+
+// navLinks.forEach(link => {
+//   if (link.getAttribute('href') === currentPage) {
+//     link.classList.add('active');
+//   }
+// });
+
+
+
+  

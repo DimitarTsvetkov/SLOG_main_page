@@ -17,7 +17,7 @@ body::before {
 }
 
 .layout_padding {
-  padding: 75px 0;
+  padding: 20px 0;
 }
 
 .layout_padding2 {
@@ -571,6 +571,90 @@ h1 {
     font-size: 1.2rem;
   }
 }
+
+/* Roadmap Section */
+.roadmap-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.roadmap-item {
+  background-color: rgba(254, 192, 22, 0.1);
+  border-left: 4px solid #fec016;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.roadmap-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.roadmap-item h3 {
+  color: #fec016;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.roadmap-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.roadmap-item ul li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #d2f4f4;
+}
+
+.roadmap-item ul li i {
+  margin-right: 10px;
+  color: #fec016;
+}
+
+.nav-link.active {
+  background-color: rgba(254, 192, 22, 0.8);
+  color: #fff !important;
+  border-radius: 8px;
+}
+
+
+/* Under Construction Banner */
+.construction-banner {
+  width: 100%;
+  background-color: #fec016; /* Gold color */
+  color: #232323; /* Dark text for contrast */
+  padding: 10px 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 9999; /* Ensure it stays above other content */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex; /* Use flexbox to align text */
+}
+
+.banner-text {
+  white-space: nowrap; /* Prevent text from wrapping */
+  animation: scrollBanner 30s linear infinite; /* Animation for scrolling */
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding-right: 100%; /* Add space between duplicated text */
+  flex-shrink: 0; /* Prevent text from shrinking */
+}
+
+/* Keyframes for scrolling animation */
+@keyframes scrollBanner {
+  0% {
+    transform: translateX(100%); /* Start from the right */
+  }
+  100% {
+    transform: translateX(-100%); /* Move to the left */
+  }
+}
+
 
 
 
