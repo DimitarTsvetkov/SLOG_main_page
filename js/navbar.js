@@ -9,8 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // 1. Current page matches the link (e.g., music.html)
       // 2. On index.html and the link is "Home"
       if (
-        linkPage === currentPage ||
-        (currentPage === "index.html" && linkPage === "index.html" && link.getAttribute('href') === "index.html")
+        currentPage === "index.html" && linkPage === "index.html" && link.getAttribute('href') === "index.html"
       ) {
         link.classList.add('active');
       }
