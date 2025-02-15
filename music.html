@@ -90,6 +90,7 @@
     .music-player .volume-control input[type="range"] {
       width: 100px;
     }
+    
   </style>
 </head>
 <body>
@@ -177,7 +178,7 @@
         <button id="prev-btn"><i class="fas fa-backward"></i> Previous</button>
       </div>
       <div class="volume-control">
-        <i class="fas fa-volume-up"></i>
+        <i class="fas fa-volume-up" style="color: #e0ac00;"></i>
         <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
       </div>
     </div>
@@ -195,6 +196,11 @@
     const nextBtn = document.getElementById('next-btn');
     const prevBtn = document.getElementById('prev-btn');
     const volumeSlider = document.getElementById('volume-slider');
+
+    document.addEventListener('DOMContentLoaded', () => {
+  audioPlayer.src = songSelector.value; // Set source to the first song in dropdown
+});
+
 
     // Load selected song
     songSelector.addEventListener('change', () => {
