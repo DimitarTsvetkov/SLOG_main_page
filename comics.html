@@ -39,6 +39,7 @@ body {
     display: grid !important;;
     height: 100vh;
     width: 100vw;
+    background: #f5f5f5;
 }
 
 .flipbook-wrapper {
@@ -47,25 +48,12 @@ body {
     align-items: center;
     height: calc(100vh - 100px); /* Adjust based on navbar height */
     width: 100%;
+    padding: 20px;
 }
 
 .flipbook {
     width: 1000px;
     height: 600px;
-}
-
-.flipbook .hard {
-    background: #c0392b !important;
-    color: #fff;
-    font-weight: bold;
-    border: none; 
-}
-
-.flipbook .hard small{
-	font-style: italic;
-	font-weight: lighter;
-	opacity: 0.7;
-	font-size: 14px;
 }
 
 .flipbook .page {
@@ -79,12 +67,11 @@ body {
 }
 
 .page img{
-	width: 100%;
-	object-fit: cover;
-	/* margin: auto; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
-
-
 
   </style>
 </head>
@@ -166,15 +153,15 @@ body {
     <div class="flipbook-wrapper">
 
     <div class="flipbook">
-        <div class="page" style="object-fit: cover; width: 100%;">Cover
-            <img src="images/comics/new_cover.jpg"  />
+        <div class="page" style="object-fit: cover; width: 100%">
+            <img src="images/comics/front-cover.png"  />
  
         </div>
-        <div class="hard"></div>
-      
+ 
         <div class="page">
-          <small>TODO ❤️</small>
-        </div>
+            <img src="images/comics/back_cover.png"  />
+          </div>
+      
         <div class="page">
           <img src="images/comics/img-1.png"  />
         </div>
@@ -193,9 +180,15 @@ body {
         <div class="page">
             <img src="images/comics/img-6.png"  />
           </div>
+          <div class="page">
+            <img src="images/comics/img-6.png"  />
+          </div>
+          
       
-        <div class="hard"></div>
-        <div class="hard">Thank You <small>~ todo</small></div>
+        <div class="page"> 
+            <img src="images/comics/back_cover.png"  />
+
+        </div>
       </div>
       </div>
 
