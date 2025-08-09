@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sloggy Coin Catcher</title>
+<style>
+  body { margin: 0; background: #0f2b0f; overflow: hidden; }
+  canvas { display: block; margin: auto; background: linear-gradient(#89c27f, #446b3f); }
+  #overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    color: white; font-family: sans-serif; font-size: 24px; background: rgba(0,0,0,0.5);
+    visibility: hidden;
+  }
+  button {
+    margin-top: 20px; padding: 10px 20px; font-size: 18px; cursor: pointer;
+    background: gold; border: none; border-radius: 8px;
+  }
+</style>
+</head>
+<body>
+<canvas id="gameCanvas" width="480" height="640"></canvas>
+<div id="overlay">
+  <div id="gameOverText">Game Over</div>
+  <div id="scoreText"></div>
+  <button onclick="startGame()">Restart</button>
+</div>
+<script>
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+const overlay = document.getElementById('overlay');
+const scoreText = document.getElementById('scoreText');
+
+// Player
+let player = { x: 200, y: 560, w: 80, h: 80, speed: 5 };
+let coins = [];
+let bugs = [];
+let score = 0;
+let lives = 3;
+let gameRunning = false;
+let keys = {};
+let spawnTimer = 0;
+let difficulty = 1;
+
+function resetGame(){
+  score = 0;
+  lives = 3;
+  coins = [];
+  bugs = [];
+  player.x = canvas.width/2 - player.w/2;
+  difficulty = 1;
+  spawnTimer = 0;
+}
+
+function spawnObjects(){
+  const type = Math.random() < 0.7 ? 'coin' : 'bug';
+  const x = Math.random() * (canvas.width - 40);
+  if(type === 'coin'){
+    coins.push({x: x, y: -40, w: 40, h: 40, speed: 2 + difficulty});
+  } else {
+    bugs.push({x: x, y: -40, w: 40, h: 40, speed: 2 + difficulty});
+  }
+}
+
+function update(){
+  if(keys['ArrowLeft']) player.x -= player.speed;
+  if(keys['ArrowRight']) player.x += player.speed;
+  player.x = Math.max(0, Math.min(canvas.width - player.w, player.x));
+
+  coins.forEach(c => c.y += c.speed);
+  bugs.forEach(b => b.y += b.speed);
+
+  coins = coins.filter(c => {
+    if(c.y > canvas.height) return false;
+    if(c.x < player.x + player.w && c.x + c.w > player.x && c.y < player.y + player.h && c.y + c.h > player.y){
+      score += 10;
+      return false;
+    }
+    return true;
+  });
+
+  bugs = bugs.filter(b => {
+    if(b.y > canvas.height) return false;
+    if(b.x < player.x + player.w && b.x + b.w > player.x && b.y < player.y + player.h && b.y + b.h > player.y){
+      lives -= 1;
+      if(lives <= 0) endGame();
+      return false;
+    }
+    return true;
+  });
+
+  spawnTimer++;
+  if(spawnTimer > 50){
+    spawnObjects();
+    spawnTimer = 0;
+    difficulty += 0.01;
+  }
+}
+
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle = '#6BA06B';
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  // Draw player as a green frog-like character
+  ctx.fillStyle = 'limegreen';
+  ctx.beginPath();
+  ctx.arc(player.x + player.w/2, player.y + player.h/2, player.w/2, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = 'white';
+  ctx.beginPath();
+  ctx.arc(player.x + 20, player.y + 20, 8, 0, Math.PI * 2);
+  ctx.arc(player.x + 60, player.y + 20, 8, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = 'black';
+  ctx.beginPath();
+  ctx.arc(player.x + 20, player.y + 20, 4, 0, Math.PI * 2);
+  ctx.arc(player.x + 60, player.y + 20, 4, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Draw coins
+  coins.forEach(c => {
+    ctx.fillStyle = 'gold';
+    ctx.beginPath();
+    ctx.arc(c.x + c.w/2, c.y + c.h/2, c.w/2, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  // Draw bugs
+  bugs.forEach(b => {
+    ctx.fillStyle = 'red';
+    ctx.beginPath();
+    ctx.arc(b.x + b.w/2, b.y + b.h/2, b.w/2, 0, Math.PI*2);
+    ctx.fill();
+    ctx.fillStyle = 'black';
+    ctx.fillRect(b.x + 10, b.y + 10, 5, 5);
+    ctx.fillRect(b.x + 25, b.y + 10, 5, 5);
+    ctx.strokeStyle = 'black';
+    ctx.beginPath();
+    ctx.moveTo(b.x+8, b.y+25);
+    ctx.lineTo(b.x+32, b.y+25);
+    ctx.stroke();
+  });
+
+  ctx.fillStyle = 'white';
+  ctx.font = '20px Arial';
+  ctx.fillText('Score: ' + score, 10, 20);
+  ctx.fillText('Lives: ' + lives, canvas.width - 90, 20);
+}
+
+function gameLoop(){
+  if(!gameRunning) return;
+  update();
+  draw();
+  requestAnimationFrame(gameLoop);
+}
+
+function startGame(){
+  overlay.style.visibility = 'hidden';
+  resetGame();
+  gameRunning = true;
+  gameLoop();
+}
+
+function endGame(){
+  gameRunning = false;
+  scoreText.innerText = 'Your Score: ' + score;
+  overlay.style.visibility = 'visible';
+}
+
+document.addEventListener('keydown', e => keys[e.key] = true);
+document.addEventListener('keyup', e => keys[e.key] = false);
+
+let touchStartX = null;
+canvas.addEventListener('touchstart', e => {
+  touchStartX = e.touches[0].clientX;
+});
+canvas.addEventListener('touchmove', e => {
+  const touchX = e.touches[0].clientX;
+  if(touchStartX !== null){
+    const diff = touchX - touchStartX;
+    player.x += diff * 0.1;
+    touchStartX = touchX;
+  }
+});
+
+startGame();
+</script>
+</body>
+</html>
+
+
+
+
+<!-- Now can you create the charecter to look a bit like an animated  sloth in samurais armor also the coins to look more like crypto coins and the bugs to looks like Here you are some examples for assets  -->
