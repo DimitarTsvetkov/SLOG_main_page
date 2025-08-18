@@ -12,17 +12,17 @@
   <meta name="author" content="SLOG Team" />
   <title>SLOG - Music Player</title>
   <!-- favicon -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="../css/responsive.css" rel="stylesheet" />
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   <style>
@@ -98,8 +98,8 @@
     <!-- Header Section -->
     <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container">
-        <a class="navbar-brand" href="index.html">
-          <img src="images/main.webp" alt="SLOG Logo" class="logo-circle">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../images/main.webp" alt="SLOG Logo" class="logo-circle">
           <span>SLOG</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -108,38 +108,38 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="../index.html">
                 <i class="fas fa-home"></i> Home
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#about">
+              <a class="nav-link" href="../index.html#about">
                 <i class="fas fa-info-circle"></i> About
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="roadmap.html">
+              <a class="nav-link" href="/roadmap">
                 <i class="fas fa-map"></i> Roadmap
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#chart">
+              <a class="nav-link" href="../index.html#chart">
                 <i class="fas fa-chart-line"></i> Chart
               </a>
             </li>
             
             <li class="nav-item">
-              <a class="nav-link" href="index.html#ca">
+              <a class="nav-link" href="../index.html#ca">
                 <i class="fas fa-file-contract"></i> CA
               </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="music.html">
+                <a class="nav-link" href="/music">
                   <i class="fas fa-music"></i> Music
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="comics.html">
+                <a class="nav-link" href="/comics">
                   <i class="fas fa-book"></i> Comics
                 </a>
               </li>
@@ -171,15 +171,15 @@
     <div class="music-player">
       <h2>SLOG Music Player</h2>
       <select id="song-selector">
-        <option value="audio/Whispers_of_Serenity(Intro).mp3">Whispers of Serenity(Intro)</option>
-        <option value="audio/Whispers of Serenity.mp3">Whispers of Serenity(静けさのささやき) </option>
-        <option value="audio/Horizon of Peace.mp3">Horizon of Peace(平和の地平線)</option>
-        <option value="audio/Silent Spring.mp3">Silent Spring(静かな春)</option>
+        <option value="../audio/Whispers_of_Serenity(Intro).mp3">Whispers of Serenity(Intro)</option>
+        <option value="../audio/Whispers of Serenity.mp3">Whispers of Serenity(静けさのささやき) </option>
+        <option value="../audio/Horizon of Peace.mp3">Horizon of Peace(平和の地平線)</option>
+        <option value="../audio/Silent Spring.mp3">Silent Spring(静かな春)</option>
 
 
       </select>
       <audio id="audio-player" controls>
-        <source src="audio/song1.mp3" type="audio/mpeg">
+        <source src="../audio/song1.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
       <div class="controls">
@@ -196,9 +196,9 @@
   
 
   <!-- Scripts -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/navbar.js"></script>
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <script src="../js/navbar.js"></script>
   <script>
     // Music Player Script
     const audioPlayer = document.getElementById('audio-player');
