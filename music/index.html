@@ -1,262 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="SLOG, Cryptocurrency, Slothogun Coin" />
-  <meta name="description" content="Slothogun Coin (SLOG): A balanced cryptocurrency embodying the strategic prowess of a Shogun and the serene patience of a Sloth." />
-  <meta name="author" content="SLOG Team" />
-  <title>SLOG - Music Player</title>
-  <!-- favicon -->
-  <link rel="icon" type="image/png" href="../images/favicon.png">
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="../css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="../css/responsive.css" rel="stylesheet" />
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-  <style>
-    /* Music Player Styles */
-    .music-player {
-      max-width: 600px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.6);
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      text-align: center;
-    }
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="SLOG, Cryptocurrency, Slothogun Coin" />
+    <meta
+      name="description"
+      content="Slothogun Coin (SLOG): A balanced cryptocurrency embodying the strategic prowess of a Shogun and the serene patience of a Sloth."
+    />
+    <meta name="author" content="SLOG Team" />
+    <title>SLOG - Music Player</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon.png" />
+    <!-- slider stylesheet -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <!-- fonts style -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="../css/responsive.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    <style>
+      /* Music Player Styles */
+      .music-player {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+      }
 
-    .music-player h2 {
-      color: #fec016;
-      margin-bottom: 20px;
-    }
+      .music-player h2 {
+        color: #fec016;
+        margin-bottom: 20px;
+      }
 
-    .music-player select {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      border: 1px solid #fec016;
-      background-color: #232323;
-      color: #fec016;
-      font-size: 1rem;
-    }
+      .music-player select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #fec016;
+        background-color: #232323;
+        color: #fec016;
+        font-size: 1rem;
+      }
 
-    .music-player audio {
-      width: 100%;
-      margin-bottom: 20px;
-    }
+      .music-player audio {
+        width: 100%;
+        margin-bottom: 20px;
+      }
 
-    .music-player .controls {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
+      .music-player .controls {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
 
-    .music-player .controls button {
-      background-color: #fec016;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      color: #232323;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+      .music-player .controls button {
+        background-color: #fec016;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: #232323;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
 
-    .music-player .controls button:hover {
-      background-color: #e0ac00;
-    }
+      .music-player .controls button:hover {
+        background-color: #e0ac00;
+      }
 
-    .music-player .volume-control {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
+      .music-player .volume-control {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
 
-    .music-player .volume-control input[type="range"] {
-      width: 100px;
-    }
-    
-  </style>
-</head>
-<body>
-  <div class="main_area">
-    <!-- Header Section -->
-    <header class="header_section">
-      <nav class="navbar navbar-expand-lg custom_nav-container">
-        <a class="navbar-brand" href="../index.html">
-          <img src="../images/main.webp" alt="SLOG Logo" class="logo-circle">
-          <span>SLOG</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="../index.html">
-                <i class="fas fa-home"></i> Home
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../index.html#about">
-                <i class="fas fa-info-circle"></i> About
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/roadmap">
-                <i class="fas fa-map"></i> Roadmap
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../index.html#chart">
-                <i class="fas fa-chart-line"></i> Chart
-              </a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="../index.html#ca">
-                <i class="fas fa-file-contract"></i> CA
-              </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/music">
-                  <i class="fas fa-music"></i> Music
+      .music-player .volume-control input[type='range'] {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main_area">
+      <!-- Header Section -->
+      <header class="header_section">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="../index.html">
+            <img src="../images/main.webp" alt="SLOG Logo" class="logo-circle" />
+            <span>SLOG</span>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html"> <i class="fas fa-home"></i> Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html#about"> <i class="fas fa-info-circle"></i> About </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/roadmap"> <i class="fas fa-map"></i> Roadmap </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html#chart"> <i class="fas fa-chart-line"></i> Chart </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html#ca"> <i class="fas fa-file-contract"></i> CA </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/music"> <i class="fas fa-music"></i> Music </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/comics"> <i class="fas fa-book"></i> Comics </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://x.com/slog_coinSol" target="_blank">
+                  <i class="fa-brands fa-square-x-twitter"></i> X
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/comics">
-                  <i class="fas fa-book"></i> Comics
+                <a class="nav-link" href="https://t.me/slog_coin_sol" target="_blank">
+                  <i class="fab fa-telegram"></i> Telegram
                 </a>
               </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://x.com/slog_coinSol" target="_blank">
-                <i class="fa-brands fa-square-x-twitter"></i> X
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://t.me/slog_coin_sol" target="_blank">
-                <i class="fab fa-telegram"></i> Telegram
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+            </ul>
+          </div>
+        </nav>
+      </header>
 
-    <div class="construction-banner">
-        <div class="banner-text">
-          🚧 This website is under construction. Stay tuned for updates! 🚧 
-        </div>
+      <div class="construction-banner">
+        <div class="banner-text">🚧 This website is under construction. Stay tuned for updates! 🚧</div>
         <div class="banner-text" aria-hidden="true">
           🚧 This website is under construction. Stay tuned for updates! 🚧
         </div>
       </div>
 
-    <!-- Music Player Section -->
-    <div class="music-player">
-      <h2>SLOG Music Player</h2>
-      <select id="song-selector">
-        <option value="../audio/Whispers_of_Serenity(Intro).mp3">Whispers of Serenity(Intro)</option>
-        <option value="../audio/Whispers of Serenity.mp3">Whispers of Serenity(静けさのささやき) </option>
-        <option value="../audio/Horizon of Peace.mp3">Horizon of Peace(平和の地平線)</option>
-        <option value="../audio/Silent Spring.mp3">Silent Spring(静かな春)</option>
-        <option value="../audio/Bamboo and Blossoms.mp3">Bamboo and Blossoms (竹と花)</option>
-
-
-
-      </select>
-      <audio id="audio-player" controls>
-        <source src="../audio/song1.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-      <div class="controls">
-        <button id="play-pause-btn"><i class="fas fa-play"></i> Play</button>
-        <button id="next-btn"><i class="fas fa-forward"></i> Next</button>
-        <button id="prev-btn"><i class="fas fa-backward"></i> Previous</button>
-      </div>
-      <div class="volume-control">
-        <i class="fas fa-volume-up" style="color: #e0ac00;"></i>
-        <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
+      <!-- Music Player Section -->
+      <div class="music-player">
+        <h2>SLOG Music Player</h2>
+        <select id="song-selector">
+          <option value="../audio/Whispers_of_Serenity(Intro).mp3">Whispers of Serenity(Intro)</option>
+          <option value="../audio/Whispers of Serenity.mp3">Whispers of Serenity(静けさのささやき)</option>
+          <option value="../audio/Horizon of Peace.mp3">Horizon of Peace(平和の地平線)</option>
+          <option value="../audio/Silent Spring.mp3">Silent Spring(静かな春)</option>
+          <option value="../audio/Bamboo and Blossoms.mp3">Bamboo and Blossoms (竹と花)</option>
+          <option value="../audio/Into the Bamboo Forest.mp3">Into the Bamboo Forest (竹林の中へ)</option>
+        </select>
+        <audio id="audio-player" controls>
+          <source src="../audio/song1.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <div class="controls">
+          <button id="play-pause-btn"><i class="fas fa-play"></i> Play</button>
+          <button id="next-btn"><i class="fas fa-forward"></i> Next</button>
+          <button id="prev-btn"><i class="fas fa-backward"></i> Previous</button>
+        </div>
+        <div class="volume-control">
+          <i class="fas fa-volume-up" style="color: #e0ac00"></i>
+          <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1" />
+        </div>
       </div>
     </div>
-  </div>
-  
 
-  <!-- Scripts -->
-  <script src="../js/jquery-3.4.1.min.js"></script>
-  <script src="../js/bootstrap.js"></script>
-  <script src="../js/navbar.js"></script>
-  <script>
-    // Music Player Script
-    const audioPlayer = document.getElementById('audio-player');
-    const songSelector = document.getElementById('song-selector');
-    const playPauseBtn = document.getElementById('play-pause-btn');
-    const nextBtn = document.getElementById('next-btn');
-    const prevBtn = document.getElementById('prev-btn');
-    const volumeSlider = document.getElementById('volume-slider');
+    <!-- Scripts -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script>
+      // Music Player Script
+      const audioPlayer = document.getElementById('audio-player')
+      const songSelector = document.getElementById('song-selector')
+      const playPauseBtn = document.getElementById('play-pause-btn')
+      const nextBtn = document.getElementById('next-btn')
+      const prevBtn = document.getElementById('prev-btn')
+      const volumeSlider = document.getElementById('volume-slider')
 
-    document.addEventListener('DOMContentLoaded', () => {
-  audioPlayer.src = songSelector.value; // Set source to the first song in dropdown
-});
+      document.addEventListener('DOMContentLoaded', () => {
+        audioPlayer.src = songSelector.value // Set source to the first song in dropdown
+      })
 
+      // Load selected song
+      songSelector.addEventListener('change', () => {
+        audioPlayer.src = songSelector.value
+        audioPlayer.play()
+        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i> Pause'
+      })
 
-    // Load selected song
-    songSelector.addEventListener('change', () => {
-      audioPlayer.src = songSelector.value;
-      audioPlayer.play();
-      playPauseBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
-    });
+      // Play/Pause button
+      playPauseBtn.addEventListener('click', () => {
+        if (audioPlayer.paused) {
+          audioPlayer.play()
+          playPauseBtn.innerHTML = '<i class="fas fa-pause"></i> Pause'
+        } else {
+          audioPlayer.pause()
+          playPauseBtn.innerHTML = '<i class="fas fa-play"></i> Play'
+        }
+      })
 
-    // Play/Pause button
-    playPauseBtn.addEventListener('click', () => {
-      if (audioPlayer.paused) {
-        audioPlayer.play();
-        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
-      } else {
-        audioPlayer.pause();
-        playPauseBtn.innerHTML = '<i class="fas fa-play"></i> Play';
-      }
-    });
+      // Next button
+      nextBtn.addEventListener('click', () => {
+        const currentIndex = songSelector.selectedIndex
+        const nextIndex = (currentIndex + 1) % songSelector.options.length
+        songSelector.selectedIndex = nextIndex
+        audioPlayer.src = songSelector.value
+        audioPlayer.play()
+        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i> Pause'
+      })
 
-    // Next button
-    nextBtn.addEventListener('click', () => {
-      const currentIndex = songSelector.selectedIndex;
-      const nextIndex = (currentIndex + 1) % songSelector.options.length;
-      songSelector.selectedIndex = nextIndex;
-      audioPlayer.src = songSelector.value;
-      audioPlayer.play();
-      playPauseBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
-    });
+      // Previous button
+      prevBtn.addEventListener('click', () => {
+        const currentIndex = songSelector.selectedIndex
+        const prevIndex = (currentIndex - 1 + songSelector.options.length) % songSelector.options.length
+        songSelector.selectedIndex = prevIndex
+        audioPlayer.src = songSelector.value
+        audioPlayer.play()
+        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i> Pause'
+      })
 
-    // Previous button
-    prevBtn.addEventListener('click', () => {
-      const currentIndex = songSelector.selectedIndex;
-      const prevIndex = (currentIndex - 1 + songSelector.options.length) % songSelector.options.length;
-      songSelector.selectedIndex = prevIndex;
-      audioPlayer.src = songSelector.value;
-      audioPlayer.play();
-      playPauseBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
-    });
-
-    // Volume control
-    volumeSlider.addEventListener('input', () => {
-      audioPlayer.volume = volumeSlider.value;
-    });
-  </script>
-</body>
+      // Volume control
+      volumeSlider.addEventListener('input', () => {
+        audioPlayer.volume = volumeSlider.value
+      })
+    </script>
+  </body>
 </html>
