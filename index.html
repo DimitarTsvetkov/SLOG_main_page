@@ -196,12 +196,15 @@
 
 
   <section id="ca" class="work_section layout_padding">
-      <div class="heading_container">
-        <h2>Contract Address: </h2>   
-        <p class="custom_section"> Coming soon!... </p>
-  
+
+      <div class="address-highlight">
+      <span id="walletAddress">FrtbWDygegx7uhQNB3Ktxjt3XDvmbCiT3z9fbvNNpump</span>
+      <button class="copy-btn" onclick="copyAddress()">Copy</button>
+      <span id="copySuccess" class="copy-success">Copied!</span>
       </div>
+      <canvas id="confetti-canvas" style="pointer-events:none;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:999;display:none;"></canvas>
     
+  </section>
 
 
   <!-- end chart section -->
@@ -280,6 +283,7 @@
   <!-- Chart.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="js/cryptoChart.js"></script>
+<script src="js/copyAddress.js"></script>
 </body>
 
 </html>
